@@ -1,75 +1,25 @@
-import {
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import Foto1 from "./src/assets/bob-esponja.png";
-import Foto2 from "./src/assets/lula-molusco.png";
-import Foto3 from "./src/assets/patrick.png";
-import Foto4 from "./src/assets/sandy.png";
-import Foto5 from "./src/assets/sr-siri.png";
-import Foto6 from "./src/assets/plankton.png";
-import Header from "./src/assets/Components/Header"
+import { StyleSheet, View} from "react-native";
+import FotoPerfil from "../instagram/src/assets/neymar.png";
+import InfoProfile from "./src/components/InfoProfile";
 
-export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        marginVertical: 32,
-        marginHorizontal: 16,
-      }}
-    >
-      <Header/>
-      <ScrollView
-        contentContainerStyle={{
-          gap: 8,
-          height: 100,
-        }}
-        horizontal
-        style={{ flexDirection: "row" }}
-        showsHorizontalScrollIndicator={false}
-      >
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto1}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto2}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto3}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto4}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto5}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-            source={Foto6}
-          />
-        </TouchableOpacity>
-      </ScrollView>
-    </View>
-  );
+export default function App(){
+    return (
+        <View style={styles.container}>
+            <InfoProfile
+            image = {FotoPerfil}
+            publi = {105}
+            followers = {1200}
+            following = {100}
+            descriptions="Thz"/>
+        </View>
+    );
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'#fff',
+        marginHorizontal:16,
+        marginVertical:35,
+    },
+})
